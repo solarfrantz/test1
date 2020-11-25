@@ -18,6 +18,7 @@ jobs:
             rm -f *
             git checkout package.json
             
+            echo "Downloading from ${ICOMOON_URL}"
             wget -q ${ICOMOON_URL}/selection-svg.json
             
             # checking for any changes
