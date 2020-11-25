@@ -7,7 +7,7 @@ jobs:
           name: Clone repo
           working_directory: ~/workdir
           command: |
-            git clone --depth 1 https://github.com/solarfrantz/test1
+            git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/test1.git
       - run:
           name: Download resources
           working_directory: ~/workdir/test1
@@ -21,4 +21,4 @@ jobs:
             git config user.name "solarfrantz"
             git commit --allow-empty -m "Trigger deployment"
             # Push quietly to prevent showing the token in log
-            git push -q https://github.com/solarfrantz/test1 main
+            git push -q https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/test1.git main
