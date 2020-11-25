@@ -2,25 +2,23 @@ version: 2
 jobs:
   build:
     context: nova-assets
+    working_directory: ~/workdir
     machine: true
     steps:
       - run:
           name: Clone repository
-          working_directory: ~/workdir
           command: |
-            git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git
+            git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git .
       - run:
           name: Download resources
-          working_directory: ~/workdir/test1
           command: |
-            pwd
-            ls -al
             cd icons
+            rm -rf .
+            
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
-            git add ./
+            git add .
       - deploy:
           name: Trigger deployment
-          working_directory: ~/workdir/test1
           command: |
             git config credential.helper 'cache --timeout=120'
             git config user.email "francisc.ungureanu@solarwinds.com"
