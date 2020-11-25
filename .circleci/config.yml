@@ -13,14 +13,14 @@ jobs:
             ls -al
       - run:
           name: Download resources
-          working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
+          working_directory: ~/workdir/$CIRCLE_PROJECT_REPONAME
           command: |
             pwd
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
             ls -al
       - deploy:
           name: Trigger deployment
-          working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
+          working_directory: ~/workdir/$CIRCLE_PROJECT_REPONAME
           command: |
             git config credential.helper 'cache --timeout=120'
             git config user.email "francisc.ungureanu@solarwinds.com"
