@@ -8,11 +8,14 @@ jobs:
           name: Clone repository
           working_directory: ~/workdir
           command: |
+            pwd
             git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git
+            ls -al
       - run:
           name: Download resources
           working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
           command: |
+            pwd
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
             ls -al
       - deploy:
