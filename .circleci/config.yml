@@ -20,18 +20,17 @@ jobs:
             
             wget -q ${ICOMOON_URL}/selection-svg.json
             
-            #TODO check if any files are modified in order to abort the next steps
-            git status --porcelain
+            # checking for any changes
             GIT_CHANGES=`git status --porcelain --untracked-files=no | wc -l`
-            echo "export GIT_CHANGES=$GIT_CHANGES" >> $BASH_ENV
-            source $BASH_ENV
 
             if [ $GIT_CHANGES -eq 0 ] ; then
                 echo "No resources changed"
                 circleci-agent step halt
+                exit 0
             fi
 
-            echo "Found $GIT_CHANGES changes"
+            echo "Found the following $GIT_CHANGES change(s)"
+            git status
             
             npm version patch
             git add .
@@ -39,11 +38,6 @@ jobs:
       - run:
           name: npm pack & publish
           command: |
-            if [ $GIT_CHANGES -eq 0 ] ; then
-                echo "No icon changes. Skipping NPM package publishing"
-                exit 0
-            fi
-            
             cd icons
             npm pack
 
@@ -56,11 +50,6 @@ jobs:
       - deploy:
           name: Trigger deployment
           command: |
-            if [ $GIT_CHANGES -eq 0 ] ; then
-                # no changes detected so no need to commit & push any changes
-                exit 0
-            fi
-
             git config credential.helper 'cache --timeout=120'
             git config user.email "francisc.ungureanu@solarwinds.com"
             git config user.name "solarfrantz"
