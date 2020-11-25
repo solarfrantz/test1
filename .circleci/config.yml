@@ -6,12 +6,12 @@ jobs:
     machine: true
     steps:
     
-      - clone:
+      - run:
           name: Clone repository
           command: |
             git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git .
 
-      - download:
+      - run:
           name: Download resources
           command: |
             cd icons
@@ -34,7 +34,7 @@ jobs:
                 git add .
             fi
 
-      - npm:
+      - run:
           name: npm pack & publish
           command: |
             echo "Found $GIT_CHANGES changes"
