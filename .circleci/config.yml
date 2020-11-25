@@ -7,7 +7,7 @@ jobs:
           name: Clone docs
           working_directory: ~/workdir
           command: |
-            git clone --depth 1 https://github.com/dumitrucusnir/sample.git
+            git clone --depth 1 https://github.com/solarfrantz/test1
       - run:
           name: Download resources
           command: wget https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
@@ -20,4 +20,4 @@ jobs:
             git config user.name "SampleUser"
             git commit --allow-empty -m "Trigger deployment"
             # Push quietly to prevent showing the token in log
-            git push -q https://github.com/dumitrucusnir/sample.git master
+            git push -q https://github.com/solarfrantz/test1 main
