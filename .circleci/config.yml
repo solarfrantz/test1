@@ -5,38 +5,58 @@ jobs:
     working_directory: ~/workdir
     machine: true
     steps:
-      - run:
+    
+      - clone:
           name: Clone repository
           command: |
             git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git .
-      - run:
+
+      - download:
           name: Download resources
           command: |
             cd icons
             rm -f *
             git checkout package.json
-            npm version patch
             
-            wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
-            git add .
+            wget -q ${ICOMOON_URL}/selection-svg.json
             
             #TODO check if any files are modified in order to abort the next steps
-      - run:
-          name: NPM pack
-          command: |
-            cd icons
-            npm pack # => generic-icons-1.0.0.tgz
+            git status --porcelain
+            GIT_CHANGES=`git status --porcelain --untracked-files=no | wc -l`
+            if [ $GIT_CHANGES -eq 0 ] ; then
+                echo "No icon changes"
+            else
+                echo "Found $GIT_CHANGES changes"
+                echo "export GIT_CHANGES=GIT_CHANGES" >> $BASH_ENV
+                source $BASH_ENV
+                
+                npm version patch
+                git add .
+            fi
 
-            # authenticated with github
+      - npm:
+          name: npm pack & publish
+          command: |
+            echo "Found $GIT_CHANGES changes"
+            exit 0
+            cd icons
+            npm pack
+
+            # authenticate with npmjs token
             echo "//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}" > .npmrc
-            # npm login --scope=@test-assets-3984 --registry=https://npm.pkg.github.com
+            
+            # npm login --registry=https://npm.pkg.github.com
             npm publish
+
       - deploy:
           name: Trigger deployment
           command: |
+            echo "Found $GIT_CHANGES changes"
+            exit 0
+
             git config credential.helper 'cache --timeout=120'
             git config user.email "francisc.ungureanu@solarwinds.com"
             git config user.name "solarfrantz"
-            git commit --allow-empty -am "Trigger deployment"
+            git commit -m "Trigger deployment"
             # Push quietly to prevent showing the token in log
             # git push -q https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git ${CIRCLE_BRANCH}
