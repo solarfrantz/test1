@@ -13,6 +13,8 @@ jobs:
           name: Download resources
           working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
           command: |
+            pwd
+            ls -al
             cd icons
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
             git add ./
