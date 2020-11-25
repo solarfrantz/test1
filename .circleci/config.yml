@@ -27,13 +27,13 @@ jobs:
                 echo "No resources changed"
                 circleci-agent step halt
                 exit 0
+            else
+                echo "Found the following $GIT_CHANGES change(s)"
+                git status
+                
+                npm version patch
+                git add .
             fi
-
-            echo "Found the following $GIT_CHANGES change(s)"
-            git status
-            
-            npm version patch
-            git add .
 
       - run:
           name: npm pack & publish
