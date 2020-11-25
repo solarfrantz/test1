@@ -23,11 +23,12 @@ jobs:
             
             # checking for any changes
             GIT_CHANGES=`git status --porcelain --untracked-files=no | wc -l`
+            git status
+            echo "Found ${GIT_CHANGES} change(s)"
 
             if [ $GIT_CHANGES -eq 0 ] ; then
                 echo "No resources changed"
                 circleci-agent step halt
-                exit 0
             else
                 echo "Found the following $GIT_CHANGES change(s)"
                 git status
