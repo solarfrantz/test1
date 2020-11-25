@@ -15,9 +15,12 @@ jobs:
             cd icons
             rm -f *
             git checkout package.json
+            npm version patch
             
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
             git add .
+            
+            #TODO check if any files are modified in order to abort the next steps
       - run:
           name: NPM pack
           command: |
@@ -25,9 +28,9 @@ jobs:
             npm pack # => generic-icons-1.0.0.tgz
 
             # authenticated with github
-            echo '//npm.pkg.github.com/:_authToken=${DOCS_GITHUB_TOKEN}' > .npmrc
+            echo "//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}" > .npmrc
             # npm login --scope=@test-assets-3984 --registry=https://npm.pkg.github.com
-            
+            npm publish
       - deploy:
           name: Trigger deployment
           command: |
