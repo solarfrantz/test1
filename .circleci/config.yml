@@ -29,7 +29,6 @@ jobs:
             if [ $GIT_CHANGES -eq 0 ] ; then
                 echo "No resources changed"
                 circleci-agent step halt
-                exit 0
             fi
 
             echo "Found $GIT_CHANGES changes"
