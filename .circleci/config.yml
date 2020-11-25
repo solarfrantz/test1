@@ -5,25 +5,23 @@ jobs:
     machine: true
     steps:
       - run:
-          name: Clone repo
+          name: Clone repository
           working_directory: ~/workdir
           command: |
-            echo "HERE1"
-            echo $DOCS_GITHUB_TOKEN
-            echo "HERE2"
-            echo ${DOCS_GITHUB_TOKEN}
-            git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/test1.git
+            git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git
       - run:
           name: Download resources
-          working_directory: ~/workdir/test1
-          command: wget https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
+          working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
+          command: |
+            wget https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
+            ls -al
       - deploy:
-          name: Trigger docs deployment
-          working_directory: ~/workdir/test1
+          name: Trigger deployment
+          working_directory: ~/workdir/${CIRCLE_PROJECT_REPONAME}
           command: |
             git config credential.helper 'cache --timeout=120'
             git config user.email "francisc.ungureanu@solarwinds.com"
             git config user.name "solarfrantz"
-            git commit --allow-empty -m "Trigger deployment"
+            git commit --allow-empty -am "Trigger deployment"
             # Push quietly to prevent showing the token in log
-            git push -q https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/test1.git main
+            git push -q https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git ${CIRCLE_BRANCH}
