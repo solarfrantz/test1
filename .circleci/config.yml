@@ -13,7 +13,7 @@ jobs:
           name: Download resources
           command: |
             cd icons
-            rm -rf .
+            rm -f *
             
             wget -q https://i.icomoon.io/public/temp/a976e5f24b/UntitledProject/selection-svg.json
             git add .
