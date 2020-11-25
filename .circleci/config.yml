@@ -1,12 +1,17 @@
 version: 2
 jobs:
   build:
+    context: nova-assets
     machine: true
     steps:
       - run:
           name: Clone repo
           working_directory: ~/workdir
           command: |
+            echo "HERE1"
+            echo $DOCS_GITHUB_TOKEN
+            echo "HERE2"
+            echo ${DOCS_GITHUB_TOKEN}
             git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/test1.git
       - run:
           name: Download resources
