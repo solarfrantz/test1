@@ -2,5 +2,11 @@
   "name": "orbs-epsilon-icons",
   "version": "1.1.18",
   "description": "Web fonts & SVG icons",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "solarwinds",
+    "icons",
+    "font",
+    "svg"
+  ]
 }
