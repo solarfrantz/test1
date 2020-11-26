@@ -91,6 +91,7 @@ jobs:
           working_directory: ~/workdir/icons
           command: |
             rm *.tgz
+            rm .npmrc
 
       - store_artifacts:
           path: ~/workdir/icons
