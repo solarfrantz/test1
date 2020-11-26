@@ -38,7 +38,7 @@ jobs:
              
             # Print array values in  lines
             for filename in ${files[*]}; do
-                echo "Downloading ${filename}"
+                echo "Downloading ${ICOMOON_URL}/${filename}"
                 wget -q ${ICOMOON_URL}/$filename
             done            
             
