@@ -31,7 +31,7 @@ jobs:
                 "icomoon.ttf"
                 "icomoon.woff"
 
-                "selection-svg.json"
+                "selection.json"
 
                 "style-svg.css"
                 "style.css"
