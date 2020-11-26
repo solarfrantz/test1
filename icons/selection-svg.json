@@ -1,143 +1,6 @@
 {
   "IcoMoonType": "selection",
-  "icons": [
-    {
-      "icon": {
-        "paths": [
-          "M768 512c0 141.385-114.615 256-256 256s-256-114.615-256-256c0-141.385 114.615-256 256-256s256 114.615 256 256z",
-          "M1536 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z",
-          "M512 153.6c71.68 0 133.12 87.040 133.12 189.44s-61.44 189.44-133.12 189.44-133.12-87.040-133.12-189.44 61.44-189.44 133.12-189.44zM640 537.6c-5.12 30.72-15.36 61.44-30.72 81.92-25.6 35.84-56.32 61.44-97.28 61.44-35.84 0-71.68-25.6-97.28-61.44-15.36-25.6-25.6-51.2-30.72-81.92-92.16 35.84-153.6 112.64-153.6 199.68 0 35.84 30.72 66.56 66.56 66.56 10.24 0 20.48-5.12 30.72-5.12 35.84 40.96 102.4 71.68 184.32 71.68 76.8 0 148.48-30.72 184.32-71.68 10.24 5.12 20.48 5.12 30.72 5.12 35.84 0 66.56-30.72 66.56-66.56 0-87.040-61.44-163.84-153.6-199.68z"
-        ],
-        "attrs": [
-          {
-            "fill": "rgb(0, 255, 0)"
-          },
-          {
-            "fill": "rgb(255, 0, 0)"
-          },
-          {
-            "fill": "rgb(41, 121, 148)"
-          }
-        ],
-        "isMulticolor": true,
-        "isMulticolor2": false,
-        "grid": 16,
-        "tags": [
-          "acknowledged"
-        ],
-        "colorPermutations": {
-          "25500125501411211481": [
-            {
-              "f": 1
-            },
-            {
-              "f": 2
-            },
-            {
-              "f": 0
-            }
-          ]
-        }
-      },
-      "attrs": [
-        {
-          "fill": "rgb(0, 255, 0)"
-        },
-        {
-          "fill": "rgb(255, 0, 0)"
-        },
-        {
-          "fill": "rgb(41, 121, 148)"
-        }
-      ],
-      "properties": {
-        "order": 2,
-        "id": 492,
-        "name": "acknowledged",
-        "prevSize": 32
-      },
-      "setIdx": 0,
-      "setId": 1,
-      "iconIdx": 0
-    },
-    {
-      "icon": {
-        "paths": [
-          "M1024 590.444l-512-397.426-512 397.428v-162.038l512-397.426 512 397.428zM896 576v384h-256v-256h-256v256h-256v-384l384-288z"
-        ],
-        "tags": [
-          "home",
-          "house"
-        ],
-        "defaultCode": 59648,
-        "grid": 16,
-        "attrs": []
-      },
-      "attrs": [],
-      "properties": {
-        "ligatures": "home, house",
-        "name": "home",
-        "order": 3,
-        "id": 1,
-        "prevSize": 32
-      },
-      "setIdx": 0,
-      "setId": 1,
-      "iconIdx": 1
-    },
-    {
-      "icon": {
-        "paths": [
-          "M864 0c88.364 0 160 71.634 160 160 0 36.020-11.91 69.258-32 96l-64 64-224-224 64-64c26.742-20.090 59.978-32 96-32zM64 736l-64 288 288-64 592-592-224-224-592 592zM715.578 363.578l-448 448-55.156-55.156 448-448 55.156 55.156z"
-        ],
-        "tags": [
-          "pencil",
-          "write",
-          "edit"
-        ],
-        "defaultCode": 59653,
-        "grid": 16,
-        "attrs": []
-      },
-      "attrs": [],
-      "properties": {
-        "ligatures": "pencil, write",
-        "name": "pencil",
-        "order": 6,
-        "id": 6,
-        "prevSize": 32
-      },
-      "setIdx": 0,
-      "setId": 1,
-      "iconIdx": 3
-    },
-    {
-      "icon": {
-        "paths": [
-          "M896 256v-128h-896v704c0 35.346 28.654 64 64 64h864c53.022 0 96-42.978 96-96v-544h-128zM832 832h-768v-640h768v640zM128 320h640v64h-640zM512 448h256v64h-256zM512 576h256v64h-256zM512 704h192v64h-192zM128 448h320v320h-320z"
-        ],
-        "tags": [
-          "newspaper",
-          "news",
-          "paper"
-        ],
-        "defaultCode": 59652,
-        "grid": 16,
-        "attrs": []
-      },
-      "attrs": [],
-      "properties": {
-        "ligatures": "newspaper, news",
-        "name": "newspaper",
-        "order": 5,
-        "id": 5,
-        "prevSize": 32
-      },
-      "setIdx": 0,
-      "setId": 1,
-      "iconIdx": 5
-    }
-  ],
+  "icons": [],
   "height": 1024,
   "preferences": {
     "showGlyphs": true,
@@ -154,7 +17,8 @@
         "baseline": 6.25,
         "whitespace": 50
       },
-      "embed": false
+      "embed": false,
+      "autoHost": true
     },
     "imagePref": {
       "prefix": "icon-",
@@ -170,7 +34,7 @@
     "showCodes": true,
     "gridSize": 16,
     "quickUsageToken": {
-      "UntitledProject": "MjdkNDY5ODgwZjdhYzRiNGViOGJlNmJhN2Q3ZjY0MDIjMSMxNjA1Nzc5MjM4IyMj"
+      "UntitledProject": "OTZmMDk1YTEwNWY4NzM4MzA4YTIzNmU1MzRiZjUzNDgjMSMxNjA2MzgyODY4IyMj"
     }
   }
 }
