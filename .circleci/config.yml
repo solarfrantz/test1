@@ -14,11 +14,32 @@ jobs:
       - run:
           name: Download resources
           command: |
+            # remove any previous downloaded resources
             cd icons
             rm -f *
             git checkout package.json
             
-            wget -q ${ICOMOON_URL}/selection-svg.json
+            # list of files to be downloaded
+            files=(
+                # SVG
+                "symbol-defs.svg"
+
+                # web fonts
+                "icomoon.eot"
+                "icomoon.ttf"
+                "icomoon.woff"
+
+                "selection-svg.json"
+
+                "style-svg.css"
+                "style.css"
+                "svgxuse.js"
+            )
+             
+            # Print array values in  lines
+            for filename in ${files[*]}; do
+                wget -q ${ICOMOON_URL}/$filename
+            done            
             
             # checking for any changes
             GIT_CHANGES=`git status --porcelain --untracked-files=no | wc -l`
@@ -31,7 +52,10 @@ jobs:
                 echo "Found the following $GIT_CHANGES change(s)"
                 git status
                 
+                # increment package version
                 npm version patch
+
+                # prepare for commiting all downloaded resources that have changed
                 git add .
             fi
 
