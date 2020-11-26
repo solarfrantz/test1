@@ -17,7 +17,7 @@ jobs:
           command: |
             # remove any previous downloaded resources
             rm -f *
-            git checkout package.json
+            git checkout package.json README.md
             
             # list of files to be downloaded
             files=(
