@@ -13,9 +13,9 @@ jobs:
 
       - run:
           name: Download resources
+          working_directory: ~/workdir/icons
           command: |
             # remove any previous downloaded resources
-            cd icons
             rm -f *
             git checkout package.json
             
@@ -44,6 +44,7 @@ jobs:
             
       - run:
           name: Detecting resource changes
+          working_directory: ~/workdir/icons
           command: |
             # checking for any changes
             GIT_CHANGES=`git status --porcelain --untracked-files=no | wc -l`
@@ -65,8 +66,8 @@ jobs:
 
       - run:
           name: npm pack & publish
+          working_directory: ~/workdir/icons
           command: |
-            cd icons
             npm pack
 
             # authenticate with npmjs token
@@ -87,6 +88,7 @@ jobs:
 
       - run:
           name: Cleanup
+          working_directory: ~/workdir/icons
           command: |
             rm *.tgz
 
