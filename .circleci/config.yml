@@ -17,6 +17,8 @@ jobs:
           command: |
             # remove any previous downloaded resources
             rm -f *
+
+            # keep certain files to be available in the npm package
             git checkout package.json README.md
             
             # list of files to be downloaded
