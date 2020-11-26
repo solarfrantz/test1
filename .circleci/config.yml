@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Clone repository
           command: |
-            git clone https://${DOCS_GITHUB_TOKEN}@github.com/solarfrantz/${CIRCLE_PROJECT_REPONAME}.git .
+            git clone ${CIRCLE_REPOSITORY_URL} .
 
       - run:
           name: Download resources
