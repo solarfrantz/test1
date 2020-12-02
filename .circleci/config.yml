@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/workdir
     machine: true
     steps:
-    
+
       - run:
           name: Clone repository
           command: |
@@ -72,10 +72,9 @@ jobs:
           command: |
             npm pack
 
-            # authenticate with npmjs token
-            echo "//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}" > .npmrc
+            # authenticate with GitHub personal access token
+            echo "//npm.pkg.github.com/:_authToken=${GITHUB_PERSONAL_TOKEN}" > .npmrc
             
-            # npm login --registry=https://npm.pkg.github.com
             npm publish
 
       - deploy:
