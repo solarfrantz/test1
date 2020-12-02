@@ -79,7 +79,7 @@
         checkUseElems = function () {
             var base;
             var bcr;
-            var fallback = "https://i.icomoon.io/public/temp/659d899e55/UntitledProject/symbol-defs.svg?291c9c2f"; // optional fallback URL in case no base path to SVG file was given and no symbol definition was found.
+            var fallback = "https://i.icomoon.io/public/temp/659d899e55/UntitledProject/symbol-defs.svg?230f304e"; // optional fallback URL in case no base path to SVG file was given and no symbol definition was found.
             var hash;
             var href;
             var i;
