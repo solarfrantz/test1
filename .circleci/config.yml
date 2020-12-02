@@ -25,17 +25,18 @@ jobs:
             files=(
                 # SVG
                 "symbol-defs.svg"
+                "selection-svg.json"
+                "style-svg.css"
+                "svgxuse.js"
 
                 # web fonts
-                # "icomoon.eot"
-                # "icomoon.ttf"
-                # "icomoon.woff"
-
-                "selection-svg.json"
-
-                "style-svg.css"
-                # "style.css"
-                # "svgxuse.js"
+                "selection.json"
+                "icomoon.eot"
+                "icomoon.ttf"
+                "icomoon.woff"
+                "variables.less"
+                "style.less"
+                "style.css"
             )
              
             # Print array values in  lines
