@@ -35,7 +35,7 @@ jobs:
 
                 "style-svg.css"
                 # "style.css"
-                "svgxuse.js"
+                # "svgxuse.js"
             )
              
             # Print array values in  lines
