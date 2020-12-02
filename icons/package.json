@@ -1,13 +1,13 @@
 {
   "name": "@solarfrantz/orbs-epsilon-icons",
-  "version": "1.1.19",
+  "version": "1.1.21",
   "description": "Web fonts & SVG icons",
   "license": "MIT",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "git://github.com/solarfrantz/test1.git",
     "directory": "icons"
   },
