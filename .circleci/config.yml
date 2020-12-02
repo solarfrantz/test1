@@ -27,14 +27,14 @@ jobs:
                 "symbol-defs.svg"
 
                 # web fonts
-                "icomoon.eot"
-                "icomoon.ttf"
-                "icomoon.woff"
+#                "icomoon.eot"
+#                "icomoon.ttf"
+#                "icomoon.woff"
 
                 "selection.json"
 
                 "style-svg.css"
-                "style.css"
+#                "style.css"
                 "svgxuse.js"
             )
              
