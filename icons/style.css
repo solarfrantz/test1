@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.eot?5s8hf7');
-  src:  url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.eot?5s8hf7#iefix') format('embedded-opentype'),
-    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.ttf?5s8hf7') format('truetype'),
-    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.woff?5s8hf7') format('woff'),
-    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.svg?5s8hf7#icomoon') format('svg');
+  src:  url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.eot?2rw12w');
+  src:  url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.eot?2rw12w#iefix') format('embedded-opentype'),
+    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.ttf?2rw12w') format('truetype'),
+    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.woff?2rw12w') format('woff'),
+    url('https://i.icomoon.io/public/temp/659d899e55/UntitledProject/icomoon.svg?2rw12w#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -33,9 +33,6 @@
 }
 .icon-home3:before {
   content: "\e902";
-}
-.icon-office:before {
-  content: "\e903";
 }
 .icon-pencil2:before {
   content: "\e906";
